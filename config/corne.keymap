@@ -37,11 +37,6 @@
     hold-time-ms = <2500>; // Only turn off it the key is held for 5 seconds or longer.
 };
 
-/ { 
-    // Define the soft off behavior behaviors 
-    { hw_soft_off: hw_soft_off { compatible = "zmk,behavior-soft-off"; #binding-cells = <0>; hold-time-ms = <3000>; // 3 second hold time }; };
-
-
 / {
         behaviors {
                 // Home row mods with custom tapping term
@@ -96,6 +91,7 @@
                         bindings = <&kp BSPC>, <&kp DEL>;
                         mods = <(MOD_LCTL|MOD_RCTL)>;
                 };
+
                 hw_soft_off: hw_soft_off {
                         compatible = "zmk,behavior-soft-off";
                         #binding-cells = <0>;
