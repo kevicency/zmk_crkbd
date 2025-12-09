@@ -104,6 +104,17 @@
                 };
         };
 
+        combos {
+                compatible = "zmk,combos";
+
+                // Hardware soft off combo: Press top-left (left side) + top-right (right side)
+                combo_hw_soft_off {
+                        timeout-ms = <100>;
+                        key-positions = <0 11>;  // TAB (left) + ' (right)
+                        bindings = <&hw_soft_off>;
+                };
+        };
+
         macros {
                 // Tab navigation macros
                 tab_fwd: tab_forward {
