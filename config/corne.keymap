@@ -91,12 +91,6 @@
                         bindings = <&kp BSPC>, <&kp DEL>;
                         mods = <(MOD_LCTL|MOD_RCTL)>;
                 };
-
-                hw_soft_off: hw_soft_off {
-                        compatible = "zmk,behavior-soft-off";
-                        #binding-cells = <0>;
-                        hold-time-ms = <500>;
-                };
         };
 
 
@@ -115,7 +109,7 @@
                 combo_hw_soft_off {
                         timeout-ms = <100>;
                         key-positions = <0 11>;  // TAB (left) + ' (right)
-                        bindings = <&hw_soft_off>;
+                        bindings = <&soft_off>;
                 };
         };
 
@@ -274,3 +268,4 @@
                 };
         };
 };
+

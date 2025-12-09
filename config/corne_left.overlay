@@ -1,0 +1,14 @@
+/ {
+    soft_off_wakeup_sources {
+        compatible = "zmk,soft-off-wakeup-sources";
+        wakeup-sources = <&wakeup_key>;
+    };
+
+    wakeup_key: wakeup_key {
+        compatible = "zmk,gpio-key-wakeup-trigger";
+        status = "okay";
+        gpios = <&pro_micro 4 GPIO_ACTIVE_HIGH>;  // Row 0 for position 0 (TAB key)
+        extra-gpios = <&pro_micro 21 GPIO_ACTIVE_HIGH>;  // Column 0
+        wakeup-source;
+    };
+};
