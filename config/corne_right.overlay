@@ -4,9 +4,11 @@
         wakeup-sources = <&wakeup_trigger>;
     };
 
-    wakeup_key: wakeup_key {
-        compatible = "zmk,gpio-key";
-        gpios = <&pro_micro 4 GPIO_ACTIVE_HIGH>;  // Row 0 for position 11 (apostrophe key)
+    keys {
+        compatible = "gpio-keys";
+        wakeup_key: wakeup_key {
+            gpios = <&pro_micro 4 GPIO_ACTIVE_HIGH>;  // Row 0 for position 11 (apostrophe key)
+        };
     };
 
     wakeup_trigger: wakeup_trigger {
