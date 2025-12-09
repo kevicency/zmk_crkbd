@@ -217,9 +217,9 @@
 // | CLR  |     |     |MUTE |     |     |   |  0  |BTTOG|     |     |     |      |
 //                    |     |     |     |   |     |     |     |
                         bindings = <
-   &soft_off   &kp C_BRI_UP  &kp C_PREV  &kp C_VOL_UP  &kp C_NEXT  &none          &to 0   &none         &none   &none   &none   &to 0
-   &trans      &kp C_BRI_DN  &kp C_PP    &kp C_VOL_DN  &kp C_STOP  &none          &to 0   &out OUT_TOG  &none   &none   &none   &trans
-   &sys_reset  &none         &none       &kp C_MUTE    &none       &none          &to 0   &bt BT_CLR    &none   &none   &none   &none
+   &soft_off   &kp C_BRI_UP  &kp C_PREV  &kp C_VOL_UP  &kp C_NEXT  &none          &to 0   &out OUT_TOG  &bt BT_PRV  &bt BT_NXT  &bt BT_CLR   &to 0
+   &trans      &kp C_BRI_DN  &kp C_PP    &kp C_VOL_DN  &kp C_STOP  &none          &to 0   &none    &none   &none   &none   &trans
+   &sys_reset  &none         &none       &kp C_MUTE    &none       &none          &to 0   &none    &none   &none   &none   &none
                                          &trans        &trans      &trans         &trans  &trans        &trans
                         >;
                 };
