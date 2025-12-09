@@ -7,7 +7,7 @@
     keys {
         compatible = "gpio-keys";
         wakeup_key: wakeup_key {
-            gpios = <&pro_micro 4 GPIO_ACTIVE_HIGH>;  // Row 0 for position 11 (apostrophe key)
+            gpios = <&pro_micro 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;  // Row 0 for position 11 (apostrophe key)
         };
     };
 
@@ -15,7 +15,15 @@
         compatible = "zmk,gpio-key-wakeup-trigger";
         status = "okay";
         trigger = <&wakeup_key>;
-        extra-gpios = <&pro_micro 21 GPIO_ACTIVE_HIGH>;  // Column 5 on right side
+        // Enable all column pins for right side
+        extra-gpios
+            = <&pro_micro 14 GPIO_ACTIVE_HIGH>  // Column 0
+            , <&pro_micro 15 GPIO_ACTIVE_HIGH>  // Column 1
+            , <&pro_micro 18 GPIO_ACTIVE_HIGH>  // Column 2
+            , <&pro_micro 19 GPIO_ACTIVE_HIGH>  // Column 3
+            , <&pro_micro 20 GPIO_ACTIVE_HIGH>  // Column 4
+            , <&pro_micro 21 GPIO_ACTIVE_HIGH>  // Column 5
+            ;
         wakeup-source;
     };
 };
