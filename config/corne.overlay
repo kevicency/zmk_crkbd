@@ -28,14 +28,3 @@
         };
     };
 };
-
-// Advanced mouse emulation configuration
-&mmv {
-    time-to-max-speed-ms = <500>;
-    acceleration-exponent = <2>;
-};
-
-&msc {
-    time-to-max-speed-ms = <300>;
-    acceleration-exponent = <1>;
-};

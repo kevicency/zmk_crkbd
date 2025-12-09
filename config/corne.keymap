@@ -22,6 +22,18 @@
 #define SH_RE &mt_thumb RSHFT RET
 #define CT_SP &mt_thumb RCTRL SPACE
 
+// Advanced mouse emulation configuration
+&mmv {
+    time-to-max-speed-ms = <500>;
+    acceleration-exponent = <2>;
+};
+
+&msc {
+    time-to-max-speed-ms = <300>;
+    acceleration-exponent = <1>;
+};
+
+
 / {
         behaviors {
                 // Home row mods with custom tapping term
