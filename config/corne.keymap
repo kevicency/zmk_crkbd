@@ -127,7 +127,7 @@
                 redo: redo_mac {
                         compatible = "zmk,behavior-macro";
                         #binding-cells = <0>;
-                        bindings = <&kp LG(SHIFT) &kp LG(Z)>;
+                        bindings = <&kp LG(LS(Z))>;
                 };
                 select_all: select_all_mac {
                         compatible = "zmk,behavior-macro";
