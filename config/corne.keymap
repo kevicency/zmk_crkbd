@@ -221,7 +221,7 @@
 // -----------------------------------------------------------------------------------------
 // | TAB  |     |HOME | UP  | END |PGUP |   |  *  |  7  |  8  |  9  |  +  |  R   |
 // |      | SEL |LEFT |DOWN |RIGHT|PGDN |   |  =  |  4  |  5  |  6  |  -  |      |
-// |  =   |UNDO | CUT |COPY |  .  |PASTE|   |  0  |  1  |  2  |  3  |  /  | DEL  |
+// | REDO |UNDO | CUT |COPY |  .  |PASTE|   |  0  |  1  |  2  |  3  |  /  | DEL  |
 //                    | GUI | NUM |     |   |     |     | SFT |
                         bindings = <
    &kp TAB    &trans       &kp HOME   &kp UP     &kp END     &kp PG_UP          &kp KP_MULTIPLY  &kp KP_N7   &kp KP_N8      &kp KP_N9   &kp PLUS    &kp R
@@ -235,7 +235,7 @@
                         display-name = "NAV";
 // -----------------------------------------------------------------------------------------
 // | TAB  |CAPS |WH_L |MS_U |WH_R |WH_U |   |NAV_B|TAB_B|TAB_F|NAV_F|TAB_C| GAME |
-// |      | GUI |MS_L |MS_D |MS_R |WH_D |   |G+BTN| BTN1| BTN2| BTN3| ALT |      |
+// |      | GUI |MS_L |MS_D |MS_R |WH_D |   | BTN4| BTN1| BTN2| BTN3| ALT |      |
 // |      |UNDO | CUT |COPY |     |PASTE|   | UTIL|     |     |     |     |      |
 //                    | SFT |     |     |   |     |     | SFT |
                         bindings = <
@@ -249,9 +249,9 @@
                 util_layer {
                         display-name = "UTIL";
 // -----------------------------------------------------------------------------------------
-// |SOFOFF|BR_UP|PREV |VOL_U|NEXT |     |   |  0  |BT_PR|BT_NX|BT_CL|     |  0  |
-// |      |BR_DN|PLAY |VOL_D|STOP |     |   |  0  |OUT_T|     |     |     |     |
-// | CLR  |     |     |MUTE |     |     |   |  0  |EP_TG|EP_ON|EP_OF|     |     |
+// |SOFOFF|BR_UP|PREV |VOL_U|NEXT |     |   |BASE |BT_PR|BT_NX|BT_CL|     | BASE |
+// |      |BR_DN|PLAY |VOL_D|STOP |     |   |BASE |OUT_T|     |     |     |      |
+// |RESET |     |     |MUTE |     |     |   |BASE |EP_TG|EP_ON|EP_OF|     |      |
 //                    |     |     |     |   |     |     |     |
                         bindings = <
    &soft_off   &kp C_BRI_UP  &kp C_PREV  &kp C_VOL_UP  &kp C_NEXT  &none          &to BASE  &bt BT_PRV         &bt BT_NXT        &bt BT_CLR         &none        &to BASE
