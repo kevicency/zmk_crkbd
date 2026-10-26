@@ -16,12 +16,12 @@
 
 // Layer aliases
 #define BASE   0
-#define SYM    1
-#define NUM    2
-#define NAV    3
-#define UTIL   4
-#define GAMING 5
-#define GNUM   6
+#define GAMING 1  // gaming layers sit below SYM so &mo SYM works from them
+#define GNUM   2
+#define SYM    3
+#define NUM    4
+#define NAV    5
+#define UTIL   6
 
 // GNUM digit: the GNUM thumb holds Ctrl, so strip it to type a plain digit in chat
 #define NO_CTL(name, key) \
@@ -132,6 +132,14 @@
                         bindings = <&soft_off>;
                         slow-release;
                 };
+
+                // Leave GAME: right middle + outer thumb (SYM + Shift)
+                combo_game_exit {
+                        timeout-ms = <50>;
+                        key-positions = <40 41>;
+                        layers = <GAMING>;
+                        bindings = <&to BASE>;
+                };
         };
 
         macros {
@@ -223,6 +231,36 @@
                         >;
                 };
 
+                gaming_layer {
+                        display-name = "GAME";
+// -----------------------------------------------------------------------------------------
+// | TAB  |  Q  |  W  |  F  |  P  |  B  |   |  J  |  L  |  U  |  Y  |  ;  |  '   |
+// | ESC  |  A  |  R  |  S  |  T  |  G  |   |  M  |  N  |  E  |  I  |  O  | ENT  |
+// | ALT  |  Z  |  X  |  C  |  D  |  V  |   |  K  |  H  |  ,  |  .  |  /  |  `   |
+//                    | SFT |CTL/N| SPC |   | BSPC| SYM | SFT |
+                        bindings = <
+   &kp TAB    &kp Q  &kp W  &kp F  &kp P  &kp B             &kp J      &kp L  &kp U      &kp Y    &kp SEMI   &kp SQT
+   &kp ESC    &kp A  &kp R  &kp S  &kp T  &kp G             &kp M      &kp N  &kp E      &kp I    &kp O      &kp RET
+   &kp LALT   &kp Z  &kp X  &kp C  &kp D  &kp V             &kp K      &kp H  &kp COMMA  &kp DOT  &kp FSLH   &kp GRAVE
+                            &kp LSHFT &ctl_gnum &kp SPACE   &kp BSPC   &mo SYM   &kp RSHFT
+                        >;
+                };
+
+                gaming_num_layer {
+                        display-name = "GNUM";
+// -----------------------------------------------------------------------------------------
+// |      |     |     |     |     |     |   |  *  |  7  |  8  |  9  |  +  |      |
+// |      |     |     |     |     |     |   |  =  |  4  |  5  |  6  |  -  |      |
+// |      |     |     |     |     |     |   |  0  |  1  |  2  |  3  |  /  |      |
+//                    |     |CTL/N|     |   |     |     |     |
+                        bindings = <
+   &trans  &trans  &trans  &trans  &trans  &trans      &gnmul  &gn7    &gn8    &gn9    &gnadd  &trans
+   &trans  &trans  &trans  &trans  &trans  &trans      &gneq   &gn4    &gn5    &gn6    &gnsub  &trans
+   &trans  &trans  &trans  &trans  &trans  &trans      &gn0    &gn1    &gn2    &gn3    &gndiv  &trans
+                           &trans  &trans  &trans      &trans  &trans  &trans
+                        >;
+                };
+
                 sym_layer {
                         display-name = "SYM";
 // -----------------------------------------------------------------------------------------
@@ -280,36 +318,6 @@
    &trans      &kp C_BRI_DN  &kp C_PP    &kp C_VOL_DN  &kp C_STOP  &none          &to BASE  &out OUT_TOG       &none             &none              &none        &none
    &sys_reset  &none         &none       &kp C_MUTE    &none       &none          &to BASE  &ext_power EP_TOG  &ext_power EP_ON  &ext_power EP_OFF  &none        &none
                                          &trans        &trans      &trans         &trans       &trans             &trans
-                        >;
-                };
-
-                gaming_layer {
-                        display-name = "GAME";
-// -----------------------------------------------------------------------------------------
-// | TAB  |  Q  |  W  |  F  |  P  |  B  |   |  J  |  L  |  U  |  Y  |  ;  |  '   |
-// | ESC  |  A  |  R  |  S  |  T  |  G  |   |  M  |  N  |  E  |  I  |  O  | ENT  |
-// | ALT  |  Z  |  X  |  C  |  D  |  V  |   |  K  |  H  |  ,  |  .  |  /  |  `   |
-//                    | SFT |CTL/N| SPC |   | BSPC| BASE| SFT |
-                        bindings = <
-   &kp TAB    &kp Q  &kp W  &kp F  &kp P  &kp B             &kp J      &kp L  &kp U      &kp Y    &kp SEMI   &kp SQT
-   &kp ESC    &kp A  &kp R  &kp S  &kp T  &kp G             &kp M      &kp N  &kp E      &kp I    &kp O      &kp RET
-   &kp LALT   &kp Z  &kp X  &kp C  &kp D  &kp V             &kp K      &kp H  &kp COMMA  &kp DOT  &kp FSLH   &kp GRAVE
-                            &kp LSHFT &ctl_gnum &kp SPACE   &kp BSPC   &to BASE  &kp RSHFT
-                        >;
-                };
-
-                gaming_num_layer {
-                        display-name = "GNUM";
-// -----------------------------------------------------------------------------------------
-// |      |     |     |     |     |     |   |  *  |  7  |  8  |  9  |  +  |      |
-// |      |     |     |     |     |     |   |  =  |  4  |  5  |  6  |  -  |      |
-// |      |     |     |     |     |     |   |  0  |  1  |  2  |  3  |  /  |      |
-//                    |     |CTL/N|     |   |     |     |     |
-                        bindings = <
-   &trans  &trans  &trans  &trans  &trans  &trans      &gnmul  &gn7    &gn8    &gn9    &gnadd  &trans
-   &trans  &trans  &trans  &trans  &trans  &trans      &gneq   &gn4    &gn5    &gn6    &gnsub  &trans
-   &trans  &trans  &trans  &trans  &trans  &trans      &gn0    &gn1    &gn2    &gn3    &gndiv  &trans
-                           &trans  &trans  &trans      &trans  &trans  &trans
                         >;
                 };
         };
