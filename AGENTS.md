@@ -4,7 +4,9 @@ ZMK user config for a wireless Corne (nice!nano v2 + nice!view, split). Colemak-
 
 ## Build and verify
 
-There is no local toolchain. GitHub Actions builds on every push (`.github/workflows/build.yml` → `build.yaml` matrix). A change is done when the run for its commit goes green: `gh run watch` or `gh run list --limit 1`. Firmware ships as the run's `firmware` artifact (one `.uf2` per half).
+`scripts/build.sh` builds every `build.yaml` target in Docker, the same way CI does, into `firmware/*.uf2`. A change is done when it builds locally. The first run takes ~3 min; later runs ~10 s, since the west workspace is cached in the `zmk-west` volume.
+
+GitHub Actions also builds on every push (`.github/workflows/build.yml`); its `firmware` artifact is the release copy.
 
 The left half is the central: it alone carries the `studio-rpc-usb-uart` snippet, and it is the half that must be flashed after any keymap change. Kconfig or overlay changes need both halves.
 
