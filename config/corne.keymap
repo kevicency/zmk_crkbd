@@ -266,12 +266,12 @@
 // -----------------------------------------------------------------------------------------
 // | TAB  |  Q  |  W  |  F  |  P  |  B  |   |  J  |  L  |  U  |  Y  |  ;  |  '   |
 // | ESC  |  A  |  R  |  S  |  T  |  G  |   |  M  |  N  |  E  |  I  |  O  | ENT  |
-// |  =   |  Z  |  X  |  C  |  D  |  V  |   |  K  |  H  |  ,  |  .  |  /  |  `   |
+// | ALT  |  Z  |  X  |  C  |  D  |  V  |   |  K  |  H  |  ,  |  .  |  /  |  `   |
 //                    | SFT | CTL | SPC |   | BSPC| BASE| SFT |
                         bindings = <
    &kp TAB    &kp Q  &kp W  &kp F  &kp P  &kp B             &kp J      &kp L  &kp U      &kp Y    &kp SEMI   &kp SQT
    &kp ESC    &kp A  &kp R  &kp S  &kp T  &kp G             &kp M      &kp N  &kp E      &kp I    &kp O      &kp RET
-   &kp EQUAL  &kp Z  &kp X  &kp C  &kp D  &kp V             &kp K      &kp H  &kp COMMA  &kp DOT  &kp FSLH   &kp GRAVE
+   &kp LALT   &kp Z  &kp X  &kp C  &kp D  &kp V             &kp K      &kp H  &kp COMMA  &kp DOT  &kp FSLH   &kp GRAVE
                             &kp LSHFT &kp LCTRL &kp SPACE   &kp BSPC   &to BASE  &kp RSHFT
                         >;
                 };
