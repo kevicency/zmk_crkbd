@@ -118,6 +118,7 @@
                 combo_soft_off {
                         timeout-ms = <100>;
                         key-positions = <0 11>;  // TAB (left) + ' (right)
+                        layers = <BASE SYM NUM NAV UTIL>;  // not GAMING: a combo key waits up to timeout-ms, delaying Tab
                         bindings = <&soft_off>;
                         slow-release;
                 };
