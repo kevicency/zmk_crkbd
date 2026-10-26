@@ -16,6 +16,9 @@ if [[ ${2:-} == --check ]]; then
 fi
 
 vol=/Volumes/NICENANO
+# Both halves mount as NICENANO; a volume present before the prompt belongs to
+# some other board (or a half that re-entered its bootloader), never this one.
+[[ -d $vol ]] && { echo "$vol already mounted: eject it or reset that board first" >&2; exit 1; }
 echo "waiting for $vol: plug in the $side half, double-tap reset"
 for _ in $(seq 120); do [[ -d $vol ]] && break; sleep 1; done
 [[ -d $vol ]] || { echo "timed out: $vol never mounted" >&2; exit 1; }
@@ -24,6 +27,7 @@ for _ in $(seq 120); do [[ -d $vol ]] && break; sleep 1; done
 # success is judged by the volume unmounting.
 cp -X "$uf2" "$vol/" 2>/dev/null || true
 for _ in $(seq 30); do [[ -d $vol ]] || break; sleep 1; done
+sleep 3  # an incomplete copy makes the bootloader remount right away
 [[ -d $vol ]] && { echo "$vol still mounted: flash failed" >&2; exit 1; }
 
 echo "$sum" > "$stamp"
