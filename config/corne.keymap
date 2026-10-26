@@ -16,11 +16,11 @@
 
 // Layer aliases
 #define BASE   0
-#define GAMING 1  // below SYM/NUM so &mo NUM works from it
-#define SYM    2
-#define NUM    3
-#define NAV    4
-#define UTIL   5
+#define SYM    1
+#define NUM    2
+#define NAV    3
+#define UTIL   4
+#define GAMING 5
 
 // Shorthand aliases for complex mod-tap combinations
 #define MEH LC(LS(LALT))
@@ -202,21 +202,6 @@
                         >;
                 };
 
-                gaming_layer {
-                        display-name = "GAME";
-// -----------------------------------------------------------------------------------------
-// | TAB  |  Q  |  W  |  F  |  P  |  B  |   |  J  |  L  |  U  |  Y  |  ;  |  '   |
-// | ESC  |  A  |  R  |  S  |  T  |  G  |   |  M  |  N  |  E  |  I  |  O  | ENT  |
-// | ALT  |  Z  |  X  |  C  |  D  |  V  |   |  K  |  H  |  ,  |  .  |  /  |  `   |
-//                    | SFT | CTL | SPC |   | BSPC| BASE| NUM |
-                        bindings = <
-   &kp TAB    &kp Q  &kp W  &kp F  &kp P  &kp B             &kp J      &kp L  &kp U      &kp Y    &kp SEMI   &kp SQT
-   &kp ESC    &kp A  &kp R  &kp S  &kp T  &kp G             &kp M      &kp N  &kp E      &kp I    &kp O      &kp RET
-   &kp LALT   &kp Z  &kp X  &kp C  &kp D  &kp V             &kp K      &kp H  &kp COMMA  &kp DOT  &kp FSLH   &kp GRAVE
-                            &kp LSHFT &kp LCTRL &kp SPACE   &kp BSPC   &to BASE  &mo NUM
-                        >;
-                };
-
                 sym_layer {
                         display-name = "SYM";
 // -----------------------------------------------------------------------------------------
@@ -277,6 +262,20 @@
                         >;
                 };
 
+                gaming_layer {
+                        display-name = "GAME";
+// -----------------------------------------------------------------------------------------
+// | TAB  |  Q  |  W  |  F  |  P  |  B  |   |  J  |  L  |  U  |  Y  |  ;  |  '   |
+// | ESC  |  A  |  R  |  S  |  T  |  G  |   |  M  |  N  |  E  |  I  |  O  | ENT  |
+// | ALT  |  Z  |  X  |  C  |  D  |  V  |   |  K  |  H  |  ,  |  .  |  /  |  `   |
+//                    | SFT | CTL | SPC |   | BSPC| BASE| SFT |
+                        bindings = <
+   &kp TAB    &kp Q  &kp W  &kp F  &kp P  &kp B             &kp J      &kp L  &kp U      &kp Y    &kp SEMI   &kp SQT
+   &kp ESC    &kp A  &kp R  &kp S  &kp T  &kp G             &kp M      &kp N  &kp E      &kp I    &kp O      &kp RET
+   &kp LALT   &kp Z  &kp X  &kp C  &kp D  &kp V             &kp K      &kp H  &kp COMMA  &kp DOT  &kp FSLH   &kp GRAVE
+                            &kp LSHFT &kp LCTRL &kp SPACE   &kp BSPC   &to BASE  &kp RSHFT
+                        >;
+                };
         };
 };
 
