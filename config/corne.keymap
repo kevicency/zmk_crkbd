@@ -321,13 +321,13 @@
                         display-name = "UTIL";
 // -----------------------------------------------------------------------------------------
 // |SOFOFF|BR_UP|PREV |VOL_U|NEXT |     |   |BASE |BT_PR|BT_NX|BT_CL|     | BASE |
-// |      |BR_DN|PLAY |VOL_D|STOP |     |   |BASE |OUT_T| MAC |GAME |     |      |
-// |RESET |     |     |MUTE |     |     |   |BASE |EP_TG|EP_ON|EP_OF|     |      |
+// |      |BR_DN|PLAY |VOL_D|STOP |     |   |BASE |OUT_T|EP_TG|EP_ON|EP_OF|      |
+// |RESET |     |     |MUTE |     |     |   |BASE | MAC |GAME |     |     |      |
 //                    |     |     |     |   |     |     |     |
                         bindings = <
    &soft_off   &kp C_BRI_UP  &kp C_PREV  &kp C_VOL_UP  &kp C_NEXT  &none          &to BASE  &bt BT_PRV         &bt BT_NXT        &bt BT_CLR         &none        &to BASE
-   &trans      &kp C_BRI_DN  &kp C_PP    &kp C_VOL_DN  &kp C_STOP  &none          &to BASE  &out OUT_TOG       &md_mac           &md_game           &none        &none
-   &sys_reset  &none         &none       &kp C_MUTE    &none       &none          &to BASE  &ext_power EP_TOG  &ext_power EP_ON  &ext_power EP_OFF  &none        &none
+   &trans      &kp C_BRI_DN  &kp C_PP    &kp C_VOL_DN  &kp C_STOP  &none          &to BASE  &out OUT_TOG       &ext_power EP_TOG  &ext_power EP_ON   &ext_power EP_OFF  &none
+   &sys_reset  &none         &none       &kp C_MUTE    &none       &none          &to BASE  &md_mac            &md_game          &none              &none        &none
                                          &trans        &trans      &trans         &trans       &trans             &trans
                         >;
                 };
