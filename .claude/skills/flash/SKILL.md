@@ -10,7 +10,7 @@ Each half takes its turn: the user connects it, the script waits for the bootloa
 3. **Flash each half that needs it, left first.** For each:
    - Tell the user, in one line, before the tool call: "Plug the **<side>** half into USB and double-tap its reset button."
    - Run `scripts/flash.sh <side>` with a 180 s timeout. It waits up to 2 min for `/Volumes/NICENANO`.
-   - Done when it prints `flashed <side>`. On `timed out`, ask whether to retry or skip that half; on `still mounted`, retry once, then report the failure. On `already mounted`, ask the user to eject `NICENANO` (or press reset once on the board showing it), then rerun.
+   - Done when it prints `flashed <side>`. On `timed out`, ask whether to retry or skip that half; on `still mounted`, retry once with `scripts/flash.sh <side> --mounted` (the same half is still in its bootloader), then report the failure. On `already mounted`, ask the user to eject `NICENANO` (or press reset once on the board showing it), then rerun.
 4. **Report** which halves were flashed and which were already current.
 
 Only one half can be in the bootloader at a time: both mount as `NICENANO`, so the script cannot tell them apart and relies on the user connecting the side it named.

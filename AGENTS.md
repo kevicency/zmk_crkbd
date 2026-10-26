@@ -8,7 +8,7 @@ ZMK user config for a wireless Corne (nice!nano v2 + nice!view, split). Colemak-
 
 GitHub Actions also builds on every push (`.github/workflows/build.yml`); its `firmware` artifact is the release copy.
 
-The left half is the central: it alone carries the `studio-rpc-usb-uart` snippet, and the keymap only changes its firmware. `scripts/flash.sh` flashes a half and records the hash it flashed, so `--check` tells exactly which halves are stale.
+The left half is the central: it alone carries the `studio-rpc-usb-uart` snippet, and keymap edits mostly change only its firmware (new behaviors reach the right half too). `scripts/flash.sh` flashes a half and records the hash it flashed, so `--check` tells exactly which halves are stale.
 
 ## Keymap (`config/corne.keymap`)
 

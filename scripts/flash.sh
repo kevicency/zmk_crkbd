@@ -18,7 +18,11 @@ fi
 vol=/Volumes/NICENANO
 # Both halves mount as NICENANO; a volume present before the prompt belongs to
 # some other board (or a half that re-entered its bootloader), never this one.
-[[ -d $vol ]] && { echo "$vol already mounted: eject it or reset that board first" >&2; exit 1; }
+# --mounted: retry on the same half after "still mounted", when the user confirms it.
+if [[ ${2:-} != --mounted && -d $vol ]]; then
+  echo "$vol already mounted: eject it or reset that board first" >&2
+  exit 1
+fi
 echo "waiting for $vol: plug in the $side half, double-tap reset"
 for _ in $(seq 120); do [[ -d $vol ]] && break; sleep 1; done
 [[ -d $vol ]] || { echo "timed out: $vol never mounted" >&2; exit 1; }
