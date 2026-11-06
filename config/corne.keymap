@@ -326,14 +326,14 @@
                 util_layer {
                         display-name = "UTIL";
 // -----------------------------------------------------------------------------------------
-// |SOFOFF|BR_UP|PREV |VOL_U|NEXT |     |   |BASE |BT_PR|BT_NX|BT_CL|     | MAC  |
+// |SOFOFF|BR_UP|PREV |VOL_U|NEXT |     |   |GAME |BT_PR|BT_NX|BT_CL|     | GAME |
 // |      |BR_DN|PLAY |VOL_D|STOP |     |   |BASE |OUT_T|EP_TG|EP_ON|EP_OF| WIN  |
-// |RESET |     |     |MUTE |     |     |   |BASE | DP1 | DP2 |     |     | GAME |
+// |RESET |     |     |MUTE |     |     |   |BASE | DP1 | DP2 |     |     | MAC  |
 //                    |     |     |     |   |     |     |     |
                         bindings = <
-   &soft_off   &kp C_BRI_UP  &kp C_PREV  &kp C_VOL_UP  &kp C_NEXT  &none          &to BASE  &bt BT_PRV         &bt BT_NXT        &bt BT_CLR         &none        &md_mac
+   &soft_off   &kp C_BRI_UP  &kp C_PREV  &kp C_VOL_UP  &kp C_NEXT  &none          &to GAMING &bt BT_PRV         &bt BT_NXT        &bt BT_CLR         &none        &md_game
    &trans      &kp C_BRI_DN  &kp C_PP    &kp C_VOL_DN  &kp C_STOP  &none          &to BASE  &out OUT_TOG       &ext_power EP_TOG  &ext_power EP_ON   &ext_power EP_OFF  &md_win
-   &sys_reset  &none         &none       &kp C_MUTE    &none       &none          &to BASE  &kp F18            &kp F19           &none              &none        &md_game
+   &sys_reset  &none         &none       &kp C_MUTE    &none       &none          &to BASE  &kp F18            &kp F19           &none              &none        &md_mac
                                          &trans        &trans      &trans         &trans       &trans             &trans
                         >;
                 };
