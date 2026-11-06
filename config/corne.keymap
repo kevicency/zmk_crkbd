@@ -311,14 +311,14 @@
                 nav_layer {
                         display-name = "NAV";
 // -----------------------------------------------------------------------------------------
-// | TAB  |CAPS |WH_L |MS_U |WH_R |WH_U |   |NAV_B|TAB_B|TAB_F|NAV_F|TAB_C| MAC  |
+// | TAB  |CAPS |WH_L |MS_U |WH_R |WH_U |   |NAV_B|TAB_B|TAB_F|NAV_F|TAB_C| GAME |
 // |      | GUI |MS_L |MS_D |MS_R |WH_D |   | BTN4| BTN1| BTN2| BTN3| ALT | WIN  |
-// |      |UNDO | CUT |COPY |     |PASTE|   | UTIL|     |     |     |     | GAME |
+// |      |UNDO | CUT |COPY |     |PASTE|   | UTIL|     |     |     |     | MAC  |
 //                    | SFT |     |     |   |     |     | SFT |
                         bindings = <
-   &kp TAB  &kp CAPS  &msc SCRL_LEFT    &mmv MOVE_UP      &msc SCRL_RIGHT   &msc SCRL_UP        &nav_bck    &tab_bck  &tab_fwd   &nav_fwd  &tab_cls  &md_mac
+   &kp TAB  &kp CAPS  &msc SCRL_LEFT    &mmv MOVE_UP      &msc SCRL_RIGHT   &msc SCRL_UP        &nav_bck    &tab_bck  &tab_fwd   &nav_fwd  &tab_cls  &md_game
    &trans   &kp LGUI  &mmv MOVE_LEFT    &mmv MOVE_DOWN    &mmv MOVE_RIGHT   &msc SCRL_DOWN      &mkp MB4    &mkp MB1  &mkp MB2   &mkp MB3  &kp RALT  &md_win
-   &trans   &undo     &cut              &copy             &trans            &paste              &to UTIL    &trans    &trans     &trans    &trans    &md_game
+   &trans   &undo     &cut              &copy             &trans            &paste              &to UTIL    &trans    &trans     &trans    &trans    &md_mac
                                         &kp LSHFT         &trans            &trans              &trans      &trans    &kp RSHFT
                         >;
                 };
