@@ -110,7 +110,7 @@
                 NO_CTL(gn0, N0) NO_CTL(gn1, N1) NO_CTL(gn2, N2) NO_CTL(gn3, N3) NO_CTL(gn4, N4)
                 NO_CTL(gn5, N5) NO_CTL(gn6, N6) NO_CTL(gn7, N7) NO_CTL(gn8, N8) NO_CTL(gn9, N9)
                 NO_CTL(gnmul, ASTRK) NO_CTL(gnadd, PLUS) NO_CTL(gneq, EQUAL) NO_CTL(gnsub, MINUS) NO_CTL(gndiv, FSLH)
-                NO_CTL(gnlft, LEFT) NO_CTL(gnup, UP) NO_CTL(gnrgt, RIGHT) NO_CTL(gndn, DOWN)
+                NO_CTL(gnlft, LEFT) NO_CTL(gnup, UP) NO_CTL(gnrgt, RIGHT)
         };
 
 
@@ -268,12 +268,12 @@
 // -----------------------------------------------------------------------------------------
 // |      |     |     |     |     |     |   |  *  |  7  |  8  |  9  |  +  |      |
 // |      |     | LFT | UP  | RGT |     |   |  =  |  4  |  5  |  6  |  -  |      |
-// |      |     |     | DN  |     |     |   |  0  |  1  |  2  |  3  |  /  |      |
+// |      |     |     |     |     |     |   |  0  |  1  |  2  |  3  |  /  |      |
 //                    |     |CTL/N|     |   |     |     |     |
                         bindings = <
    &trans  &trans  &trans  &trans  &trans  &trans      &gnmul  &gn7    &gn8    &gn9    &gnadd  &trans
    &trans  &trans  &gnlft  &gnup   &gnrgt  &trans      &gneq   &gn4    &gn5    &gn6    &gnsub  &trans
-   &trans  &trans  &trans  &gndn   &trans  &trans      &gn0    &gn1    &gn2    &gn3    &gndiv  &trans
+   &trans  &trans  &trans  &trans  &trans  &trans      &gn0    &gn1    &gn2    &gn3    &gndiv  &trans
                            &trans  &trans  &trans      &trans  &trans  &trans
                         >;
                 };
