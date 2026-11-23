@@ -114,6 +114,14 @@
         };
 
 
+        // Scroll Lock Signal: every Scroll Lock flip from the host taps this
+        // binding while the layer is active (src/scroll_lock_keypress.c)
+        scroll_lock_keypress {
+                compatible = "zmk,scroll-lock-keypress";
+                bindings = <&kp SPACE>;
+                layer = <GAMING>;
+        };
+
         conditional_layers {
                 compatible = "zmk,conditional-layers";
                 tri_layer {

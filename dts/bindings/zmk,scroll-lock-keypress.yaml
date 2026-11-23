@@ -1,0 +1,15 @@
+description: |
+  Answers every Scroll Lock flip from the host (the Signal) with one press and
+  release of a binding, while a given layer is active.
+
+compatible: "zmk,scroll-lock-keypress"
+
+properties:
+  bindings:
+    type: phandle-array
+    required: true
+    description: The one behavior binding to tap, e.g. <&kp SPACE>
+  layer:
+    type: int
+    required: true
+    description: Layer that must be active for the tap to happen

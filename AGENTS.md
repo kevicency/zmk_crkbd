@@ -28,6 +28,10 @@ How layers are reached (not obvious from bindings alone):
 
 `ZMK_POINTING_DEFAULT_*` defines must stay above the `#include` lines, or the defaults win.
 
+## Scroll Lock Signal (repo-local ZMK module)
+
+This repo is also a Zephyr module (`zephyr/module.yml` → `CMakeLists.txt`, `dts/bindings/`): `src/scroll_lock_keypress.c` taps the `bindings` of the keymap's `scroll_lock_keypress` node once per Scroll Lock flip sent by the host (the Signal), only while that node's `layer` (`GAMING`) is active. It is built into the left half only, via `CONFIG_ZMK_HID_INDICATORS` in `config/corne_left.conf`; output/profile switches resync without a keypress.
+
 ## Power and wake
 
 `config/corne.conf` enables idle/sleep and soft-off. Soft-off fires from combo positions `0 + 11` (hold 2.5 s) or `&soft_off` on `UTIL`. Wake is wired in hardware terms in `corne_left.overlay` / `corne_right.overlay` (row-0 GPIO + all column pins); it does not follow the combo, so moving the combo leaves wake on the old keys.
